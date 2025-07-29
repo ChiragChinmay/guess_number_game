@@ -3,13 +3,15 @@
 let secretNumber = Math.trunc(Math.random() * 6) + 1;
 let score = 20;
 let highscore = 0;
-
+function resultMessage(message) {
+  document.querySelector(".message").textContent = message;
+}
 document.querySelector(".check").addEventListener("click", function () {
   const guess = Number(document.querySelector(".guess").value);
   if (!guess) {
     resultMessage("No number selected");
   } else if (guess === secretNumber) {
-    resultMessage("No number selected");
+    resultMessage("Correct Number selected");
     document.querySelector(".number").textContent = secretNumber;
 
     document.querySelector("body").style.backgroundColor = "#60b347";
